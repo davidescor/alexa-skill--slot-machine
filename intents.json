@@ -1,0 +1,65 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "máquina tragamonedas",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "lista de opciones",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "apagar máquina",
+                        "no jugar más",
+                        "no insertar moneda"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "gameIntent",
+                    "slots": [],
+                    "samples": [
+                        "volver a tirar",
+                        "si",
+                        "insertar moneda"
+                    ]
+                },
+                {
+                    "name": "addCoinIntent",
+                    "slots": [],
+                    "samples": [
+                        "añadir monedas"
+                    ]
+                },
+                {
+                    "name": "listPrizeIntent",
+                    "slots": [],
+                    "samples": [
+                        "lista de premios"
+                    ]
+                },
+                {
+                    "name": "currentCoinIntent",
+                    "slots": [],
+                    "samples": [
+                        "monedas actuales"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
