@@ -6,19 +6,19 @@ const Alexa = require('ask-sdk');
 var coinBase = 25;
 var losingNumber = 0;
 
-const startVoice = "Bienvenido a la Skill, máquina tragamonedas. . Elige una opción; Insertar moneda, lista de premios, añadir monedas, monedas actuales, apagar máquina y por último, lista de opciones.";
+const startVoice = "Bienvenido a la Skill maquina tragaperras. Elige una opción; Insertar moneda, lista de premios, añadir monedas, monedas actuales, apagar máquina y por último, lista de opciones.";
 const helpGame = "Voy a intentar ayudarte; estos són los comandes disponibles. Insertar moneda, Añadir monedas, Monedas actuales, Lista de premios, Lista de opciones y por último, Apagar máquina. ¿Que opción eliges?";
 
 
 var prize =  [
-  "reyes", 
-  "diamantes", "diamantes",
-  "siete", "siete", "siete",
-  "campanas", "campanas", "campanas", "campanas",
-  "fresas", "fresas", "fresas", "fresas", "fresas",
-  "manzanas", "manzanas", "manzanas", "manzanas", "manzanas", "manzanas",
+  "ciruelas", "ciruelas", "ciruelas", "ciruelas", "ciruelas", "ciruelas" , "ciruelas", "ciruelas",
   "naranjas", "naranjas",  "naranjas", "naranjas", "naranjas", "naranjas", "naranjas",
-  "ciruelas", "ciruelas", "ciruelas", "ciruelas", "ciruelas", "ciruelas" , "ciruelas", "ciruelas"
+  "manzanas", "manzanas", "manzanas", "manzanas", "manzanas", "manzanas",
+  "fresas", "fresas", "fresas", "fresas", "fresas",
+  "campanas", "campanas", "campanas", "campanas",
+  "siete", "siete", "siete",
+  "diamantes", "diamantes",
+  "reyes"
 ];
 
 const startHandler = {
@@ -76,14 +76,13 @@ const gameHandler = {
       var resultGame;
   
       coinBase--;
-
       resultGame = gameSystem();
       
       return handlerInput.responseBuilder
       .speak(resultGame)
       .reprompt(resultGame)
       .getResponse();
-      
+
     }
     
   },
@@ -94,59 +93,14 @@ const gameHandler = {
 
 function gameSystem(){
   
-    var numberRandom1 = Math.floor(Math.random() * prize.length) + 0;
-    var numberRandom2 = Math.floor(Math.random() * prize.length) + 0;
-    var numberRandom3 = Math.floor(Math.random() * prize.length) + 0; 
-      
-    var probabilityRandomPrize = Math.floor((Math.random() * 100) + 0);
-    var enterProbabilityNumber = Math.floor((Math.random() * 3) + 1);
+    var numberRandom1 = Math.floor(Math.random() * prize.length);
+    var numberRandom2 = Math.floor(Math.random() * prize.length);
+    var numberRandom3 = Math.floor(Math.random() * prize.length); 
 
-      
-      if(losingNumber >= enterProbabilityNumber){
-        
-        if(probabilityRandomPrize<=5) {
-          
-          numberRandom1 = 7;
-          numberRandom2 = 7;
-          numberRandom3 = 7; 
-          
-        }else if (probabilityRandomPrize<=10) {
-
-          numberRandom1 = 14;
-          numberRandom2 = 14;
-          numberRandom3 = 14;  
-      
-        }else if(probabilityRandomPrize<=15) {
-          
-          numberRandom1 = 17;
-          numberRandom2 = 17;
-          numberRandom3 = 17; 
-          
-        }else if (probabilityRandomPrize<=20) {
-
-          numberRandom1 = 23;
-          numberRandom2 = 23;
-          numberRandom3 = 23;  
-      
-        } else if (probabilityRandomPrize<=50) {
-
-          numberRandom1 = 32;
-          numberRandom2 = 32;
-          numberRandom3 = 32;  
-      
-        } else {
-          
-          numberRandom1 = Math.floor(Math.random() * prize.length);
-          numberRandom2 = Math.floor(Math.random() * prize.length);
-          numberRandom3 = Math.floor(Math.random() * prize.length);
-          
-        }
-        
-      }
-      
-      var globalResult;
-      globalResult = prizeUser(numberRandom1,numberRandom2,numberRandom3);
-      return globalResult;
+    var globalResult;
+    globalResult = prizeUser(numberRandom1,numberRandom2,numberRandom3);
+    
+    return globalResult;
   
 }
 
@@ -183,35 +137,35 @@ function prizeSystem(prize,numberRandom){
   
   if(prize[numberRandom] === 'ciruelas'){
     
-    prizeCoin = 2;
+    prizeCoin = 20;
     
   }else if(prize[numberRandom] === 'naranjas'){
     
-    prizeCoin = 4;
+    prizeCoin = 40;
     
   }else if(prize[numberRandom] === 'manzanas'){
     
-    prizeCoin = 6;
+    prizeCoin = 60;
     
   }else if(prize[numberRandom] === 'fresas'){
     
-    prizeCoin = 8;
+    prizeCoin = 80;
     
   }else if(prize[numberRandom] === 'campanas'){
     
-    prizeCoin = 10;
+    prizeCoin = 100;
     
   }else if(prize[numberRandom] === 'siete'){
     
-    prizeCoin = 20;
+    prizeCoin = 200;
     
   }else if(prize[numberRandom] === 'diamantes'){
     
-    prizeCoin = 50;
+    prizeCoin = 500;
     
   }else if(prize[numberRandom] === 'reyes'){
     
-    prizeCoin = 100;
+    prizeCoin = 1000;
     
   }
   
@@ -245,7 +199,7 @@ const addCoinHandler = {
       .speak("Lo sentimos, aún tienes "+coinBase+" monedas para gastar.")
       .reprompt(helpGame)
       .getResponse();
-      
+ 
     }
     
   },
@@ -299,7 +253,7 @@ const ExitHandler = {
   handle(handlerInput) {
 
     return handlerInput.responseBuilder
-      .speak('Cerrando la Skill la máquina tragamonedas. Hasta pronto.')
+      .speak('Cerrando la Skill la máquina tragaperras. Hasta pronto.')
       .getResponse();
   },
 };
