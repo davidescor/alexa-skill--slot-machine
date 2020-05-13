@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://davidespier.com/github/slot_machine/61PUyapjv0L.png" weight="200" width="200">
+  <img src="https://davidespier.com/github/slot-machine-alexa/61PUyapjv0L.png" weight="200" width="200">
 </p>
 
 
