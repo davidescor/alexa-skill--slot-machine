@@ -22,7 +22,7 @@ Skill for alexa, insert a coin and get three results if all three match there is
 
 ## Amazon store
 
-[https://www.amazon.es/dp/B088KQLKRX/](https://www.amazon.es/dp/B088KQLKRX/)
+[Amazon store](https://www.amazon.es/dp/B088KQLKRX/)
 
 
 ## Authors
