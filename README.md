@@ -17,8 +17,6 @@ Skill for alexa, insert a coin and get three results if all three match there is
 
 2. Create Lambda -> function and copy 'Lambda/index.js' in your function.
 
-3. Add the radios depending on the musical genre in the url provided in 'Lambda / index.js'.
-
 
 ## Amazon store
 
